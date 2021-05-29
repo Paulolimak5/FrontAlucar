@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>Cadastro Carro</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Veículos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastro_reserva.html">Reservas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastro_usuario.html">Usuários</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <div class="col-md-12" id="titulo_crud">
+        <Strong>Cadastro de Veículo</Strong>
+    </div>
+
+    <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" class="row g-3" id="cad_carro">
+        <div class="col-md-6">
+            <label class="form-label">Modelo</label>
+            <select class="form-select" aria-label="Default select example" name="modelo_carro" id="modelo_carro">
+                <option value="Hatch">Hatch</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Conversível">Conversível</option>
+                <option value="SUV">SUV</option>
+                <option value="Crossover">Crossover</option>
+                <option value="Minivan">Minivan</option>
+                <option value="Picapen">Picape</option>
+                <option value="Wagon">Wagon</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Marca</label>
+            <select class="form-select" aria-label="Default select example" name="marca_carro" id="marca_carro">
+                <option value="Audi">Audi</option>
+                <option value="Bmw">Bmw</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Citroen">Citroen</option>
+                <option value="Fiat">Fiat</option>
+                <option value="Ford">Ford</option>
+                <option value="Honda">Honda</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Kia">Kia</option>
+                <option value="Mercedes Benz">Mercedes Benz</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Peugeot">Peugeot</option>
+                <option value="Renault">Renault</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Volkswagen">Volkswagen</option>
+            </select>
+        </div>
+        <div class="col-md-12">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" name="nome_carro" id="nome_carro">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Qtd. de portas</label>
+            <select class="form-select" aria-label="Default select example" name="qtd_portas_carro"
+                id="qtd_portas_carro">
+                <option value="1">2</option>
+                <option value="2">3</option>
+                <option value="3">4</option>
+                <option value="3">5</option>
+                <option value="3">6</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Ano do veiculo</label>
+            <select class="form-select" aria-label="Default select example" name="ano_carro" id="ano_carro">
+                <option value="2015">2015</option>
+                <option value="2015/2016">2015/2016</option>
+                <option value="2016">2016</option>
+                <option value="2016/2017">2016/2017</option>
+                <option value="2017">2017</option>
+                <option value="2017/201">2017/2018</option>
+                <option value="2018">2018</option>
+                <option value="2018/2019">2018/2019</option>
+                <option value="2019">2019</option>
+                <option value="2019/2020">2019/2020</option>
+                <option value="2020">2020</option>
+                <option value="2020/2021">2020/2021</option>
+                <option value="2021">2021</option>
+                <option value="2021/2022">2021/2022</option>
+                <option value="2022">2022</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Cor</label>
+            <select class="form-select" aria-label="Default select example" name="cor_carro" id="cor_carro">
+                <option value="1">Preto</option>
+                <option value="2">Branco</option>
+                <option value="3">Vermelho</option>
+                <option value="3">Prata</option>
+                <option value="3">Verde</option>
+                <option value="3">Amarelo</option>
+                <option value="3">Laranja</option>
+                <option value="3">Roxo</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Qtd. de bancos</label>
+            <select class="form-select" aria-label="Default select example" name="qtd_bancos_carro"
+                id="qtd_bancos_carro">
+                <option value="1">4</option>
+                <option value="2">5</option>
+                <option value="3">6</option>
+                <option value="3">7</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Câmbio</label>
+            <select class="form-select" aria-label="Default select example" name="cambio_carro" id="cambio_carro">
+                <option value="1">Manual</option>
+                <option value="2">Automático</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Unidade</label>
+            <select class="form-select" aria-label="Default select example" name="unidade_carro" id="unidade_carro">
+                <option value="São Paulo">São Paulo</option>
+                <option value="Guarulhos">Guarulhos</option>
+                <option value="Osasco">Osasco</option>
+                <option value="São Caetano do Sul">São Caetano do Sul</option>
+                <option value="Santo André">Santo André</option>
+                <option value="São Bernardo do Campo">São Bernardo do Campo</option>
+                <option value="Cotia">Cotia</option>
+            </select>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" value="Submit" class="btn btn-primary">Enviar</button>
+        </div>
+    </form>
+
+    <table class="list table table-dark" id="lista_carro">
+        <thead>
+            <tr>
+                <th scope="col">Modelo</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Qtd. de portas</th>
+                <th scope="col">Ano do veiculo</th>
+                <th scope="col">Cor</th>
+                <th scope="col">Qtd. de bancos</th>
+                <th scope="col">Câmbio</th>
+                <th scope="col">Unidade</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script src="script_carro.js"></script>
+</body>
+
+</html>

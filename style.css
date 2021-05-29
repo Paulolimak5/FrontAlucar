@@ -1,0 +1,49 @@
+.login{
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+
+#cad_carro{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+#cad_usuario{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+#cad_reserva{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+#titulo_crud{
+    text-align: center;
+    font-size: 40px;
+}
+
+.table{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
+.navbar{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+}
+
+.nav-link{
+    font-size: 20px;
+}
