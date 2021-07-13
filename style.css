@@ -47,3 +47,22 @@
 .nav-link{
     font-size: 20px;
 }
+
+#tabela{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
+thead{
+    background-color: gray;
+}
+
+th{
+    padding: 5px;
+}
+
+td{
+    padding: 5px;
+}

@@ -21,24 +21,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="cadastro_reserva.html">Reservas</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cadastro_usuario.html">Usuários</a>
-                </li>
             </ul>
         </div>
     </nav>
-
-
-
 
     <div class="col-md-12" id="titulo_crud">
         <Strong>Cadastro de Veículo</Strong>
     </div>
 
-    <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" class="row g-3" id="cad_carro">
+    <form class="row g-3" id="cad_carro">
         <div class="col-md-6">
             <label class="form-label">Modelo</label>
-            <select class="form-select" aria-label="Default select example" name="modelo_carro" id="modelo_carro">
+            <select class="form-select" name="modelo_carro" id="modelo_carro">
                 <option value="Hatch">Hatch</option>
                 <option value="Sedan">Sedan</option>
                 <option value="Conversível">Conversível</option>
@@ -51,7 +45,7 @@
         </div>
         <div class="col-md-6">
             <label class="form-label">Marca</label>
-            <select class="form-select" aria-label="Default select example" name="marca_carro" id="marca_carro">
+            <select class="form-select" name="marca_carro" id="marca_carro">
                 <option value="Audi">Audi</option>
                 <option value="Bmw">Bmw</option>
                 <option value="Chevrolet">Chevrolet</option>
@@ -78,7 +72,7 @@
         </div>
         <div class="col-md-4">
             <label class="form-label">Qtd. de portas</label>
-            <select class="form-select" aria-label="Default select example" name="qtd_portas_carro"
+            <select class="form-select" name="qtd_portas_carro"
                 id="qtd_portas_carro">
                 <option value="1">2</option>
                 <option value="2">3</option>
@@ -155,7 +149,7 @@
         </div>
     </form>
 
-    <table class="list table table-dark" id="lista_carro">
+    <!--<table class="list table table-dark" id="tabela">
         <thead>
             <tr>
                 <th scope="col">Modelo</th>
@@ -173,7 +167,28 @@
         <tbody>
 
         </tbody>
+    </table>-->
+
+    <table id="tabela">
+
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Ano</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Qtd. bancos</th>
+                <th scope="col">Qtd. portas</th>
+                <th scope="col">Cor</th>
+                <th scope="col">Câmbio</th>
+                <th scope="col">Preço aluguel</th>
+                <th scope="col">Reservado</th>
+            </tr>
+        </thead>
     </table>
+    
+
     <script src="script_carro.js"></script>
 </body>
 
