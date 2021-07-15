@@ -35,23 +35,25 @@
         <Strong>Cadastro de Veículos</Strong>
     </div>
 
-    <form onsubmit="cadastrarCarro()" class="row g-3" id="cad_carro">
+    <!--<form onsubmit="cadastrarCarro()" class="row g-3" id="cad_carro">-->
+
+    <form class="row g-3" id="cad_carro">
         <div class="col-md-6">
             <label class="form-label">Tipo</label>
             <select class="form-select" name="type" id="type">
-                <option value="Hatch">Hatch</option>
-                <option value="Sedan">Sedan</option>
-                <option value="Conversível">Conversível</option>
+                <option value="HATCH">Hatch</option>
+                <option value="SEDAN">Sedan</option>
+                <option value="CONVERSIVEL">Conversível</option>
                 <option value="SUV">SUV</option>
-                <option value="Crossover">Crossover</option>
-                <option value="Minivan">Minivan</option>
-                <option value="Picapen">Picape</option>
-                <option value="Wagon">Wagon</option>
+                <option value="CROSSOVER">Crossover</option>
+                <option value="MINIVAN">Minivan</option>
+                <option value="PICAPEN">Picape</option>
+                <option value="WAGON">Wagon</option>
             </select>
         </div>
         <div class="col-md-6">
             <label class="form-label">Marca</label>
-            <select class="form-select" name="modelo" id="modelo">
+            <select class="form-select" name="model" id="model">
                 <option value="Audi">Audi</option>
                 <option value="Bmw">Bmw</option>
                 <option value="Chevrolet">Chevrolet</option>
@@ -109,17 +111,15 @@
         <div class="col-md-4">
             <label class="form-label">Cor</label>
             <select class="form-select" name="color" id="color">
-                <option value="Preto">Preto</option>
-                <option value="Branc">Branco</option>
-                <option value="Vermelho">Vermelho</option>
-                <option value="Prat">Prata</option>
-                <option value="Verde">Verde</option>
-                <option value="Amarel">Amarelo</option>
-                <option value="Laranja">Laranja</option>
-                <option value="Roxo">Roxo</option>
+                <option value="BLACK">Preto</option>
+                <option value="WHITE">Branco</option>
+                <option value="RED">Vermelho</option>
+                <option value="GRAY">Prata</option>
+                <option value="BLUE">Azul</option>
+                <option value="YELLOW">Amarelo</option>
             </select>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <label class="form-label">Qtd. de bancos</label>
             <select class="form-select" name="seatsQuantity" id="seatsQuantity">
                 <option value="4">4</option>
@@ -128,20 +128,27 @@
                 <option value="7">7</option>
             </select>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <label class="form-label">Câmbio</label>
             <select class="form-select" name="shift" id="shift">
-                <option value="Manual">Manual</option>
-                <option value="Automático">Automático</option>
+                <option value="MANUAL">Manual</option>
+                <option value="AUTOMATIC">Automático</option>
             </select>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <label class="form-label">Valor diária R$</label>
             <input type="text" class="form-control" name="rentValue" id="rentValue">
         </div>
+        <div class="col-md-3">
+            <label class="form-label">Alugado</label>
+            <select class="form-select" name="isRented" id="isRented">
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+            </select>
+        </div>
 
         <div class="col-12">
-            <button type="submit" value="Submit" class="btn btn-primary">Cadastrar Veículo</button>
+            <button value="Submit" onclick="cadastrarCarro()" class="btn btn-primary">Cadastrar Veículo</button>
         </div>
     </form>
 

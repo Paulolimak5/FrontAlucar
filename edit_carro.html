@@ -49,8 +49,8 @@
             <input type="text" class="form-control" id="type">
         </div>
         <div class="col-md-6">
-            <label for="modelo" class="form-label">Marca</label>
-            <input type="text" class="form-control" id="modelo">
+            <label for="model" class="form-label">Marca</label>
+            <input type="text" class="form-control" id="model">
         </div>
         <div class="col-md-4">
             <label for="portQuantity" class="form-label">Qtd. de portas</label>
@@ -64,23 +64,27 @@
             <label for="color" class="form-label">Cor</label>
             <input type="text" class="form-control" id="color">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <label for="seatsQuantity" class="form-label">Qtd. de bancos</label>
             <input type="text" class="form-control" id="seatsQuantity">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <label for="shift" class="form-label">Câmbio</label>
             <input type="text" class="form-control" id="shift">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <label for="rentValue" class="form-label">Valor diária R$</label>
             <input type="text" class="form-control" id="rentValue">
         </div>
-        <div class="col-6">
-            <button type="submit" value="Submit" class="btn btn-primary">Editar</button>
+        <div class="col-md-3">
+            <label class="form-label">Alugado</label>
+            <input type="text" class="form-control" id="isRented">
         </div>
         <div class="col-6">
-            <button type="submit" value="Submit" id="delete_button" class="btn btn-danger">Deletar</button>
+            <button value="Submit" onclick="editarCarro()" class="btn btn-primary">Editar</button>
+        </div>
+        <div class="col-6">
+            <button value="Submit" onclick="deletarCarro()" id="delete_button" class="btn btn-danger">Deletar</button>
         </div>
     </form>
 

@@ -10,7 +10,7 @@ function main(){
       redirect: 'follow'
     };
     
-    fetch("https://alucarrjsexteen.azurewebsites.net/car/list?page=0&size=10", requestOptions)
+    fetch("https://alucarjeleven.herokuapp.com/car/list?page=0&size=100", requestOptions)
     .then(function(response){
         return response.json();
       })
@@ -47,7 +47,7 @@ function criaLinha(usuario){
     tdAlugado = document.createElement("td");
     
     tdKey.innerHTML = usuario.key
-    tdModelo.innerHTML = usuario.modelo
+    tdModelo.innerHTML = usuario.model
     tdNome.innerHTML = usuario.name
     tdAno.innerHTML = usuario.year
     tdTipo.innerHTML = usuario.type

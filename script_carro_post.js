@@ -1,39 +1,53 @@
-function fazPost(url, body){
-    let request = new XMLHttpRequest()
-    request.open("POST", url, true)
-    request.setRequestHeader("Content-type", "application/json")
-    request.send(JSON.stringify(body))
-
-    request.onload = function(){
-        console.log(this.responseText)
-    }
-    return request.responseText
-}
-
 function cadastrarCarro(){
-    event.preventDefault()
-    let url = "https://alucarrjsexteen.azurewebsites.net/cars"
+
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
     let nome = document.getElementById("name").value
     let tipo = document.getElementById("type").value
-    let marca = document.getElementById("modelo").value
+    let marca = document.getElementById("model").value
     let qtd_portas = document.getElementById("portQuantity").value
     let ano_veiculo = document.getElementById("year").value
     let cor = document.getElementById("color").value
     let qtd_bancos = document.getElementById("seatsQuantity").value
     let cambio = document.getElementById("shift").value
     let valor = document.getElementById("rentValue").value
+    let alugado = document.getElementById("isRented").value
 
-    body = {
-        "name": nome,
-        "type": tipo,
-        "modelo": marca,
-        "portQuantity": qtd_portas,
-        "year": ano_veiculo,
-        "color": cor,
-        "seatsQuantity": qtd_bancos,
-        "shift": cambio,
-        "rentValue": valor
+    var myBool
+
+    if(alugado == "true"){
+        myBool = Boolean(alugado);
+    }else{
+        myBool = Boolean(!alugado);
     }
 
-    fazPost(url, body)
+    let raw =  JSON.stringify({
+        "name": nome,
+        "type": tipo,
+        "model": marca,
+        "portQuantity": Number.parseInt(qtd_portas),
+        "year": Number.parseInt(ano_veiculo),
+        "color": cor,
+        "seatsQuantity": Number.parseInt(qtd_bancos),
+        "shift": cambio,
+        "rentValue": Number.parseFloat(valor),
+        "isRented": myBool
+    });
+
+    console.log(raw)
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow',
+  mode: 'cors'
+};
+
+fetch("https://alucarjeleven.herokuapp.com/car/save", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
 }
