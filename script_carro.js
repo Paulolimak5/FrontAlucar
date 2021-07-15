@@ -15,7 +15,7 @@ function main(){
         return response.json();
       })
       .then(function(data){
-          console.log(data.content[1])
+          //console.log(data.content[1])
           forUser(data.content)
       });
 }

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <title>Cadastro Carro</title>
+    <title>Alucar - Cadastro de Veículos</title>
 </head>
 
 <body>
@@ -16,23 +16,29 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Veículos</a>
+                    <a class="nav-link" href="#">Cadastro de Veículos</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="edit_carro.html">Busca de Veículos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cadastro_reserva.html">Reservas</a>
+                    <a class="nav-link" href="cadastro_reserva.html">Cadastro de Reservas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cadastro_reserva.html">Busca de Reservas</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div class="col-md-12" id="titulo_crud">
-        <Strong>Cadastro de Veículo</Strong>
+        <Strong>Cadastro de Veículos</Strong>
     </div>
 
-    <form class="row g-3" id="cad_carro">
+    <form onsubmit="cadastrarCarro()" class="row g-3" id="cad_carro">
         <div class="col-md-6">
-            <label class="form-label">Modelo</label>
-            <select class="form-select" name="modelo_carro" id="modelo_carro">
+            <label class="form-label">Tipo</label>
+            <select class="form-select" name="type" id="type">
                 <option value="Hatch">Hatch</option>
                 <option value="Sedan">Sedan</option>
                 <option value="Conversível">Conversível</option>
@@ -45,7 +51,7 @@
         </div>
         <div class="col-md-6">
             <label class="form-label">Marca</label>
-            <select class="form-select" name="marca_carro" id="marca_carro">
+            <select class="form-select" name="modelo" id="modelo">
                 <option value="Audi">Audi</option>
                 <option value="Bmw">Bmw</option>
                 <option value="Chevrolet">Chevrolet</option>
@@ -68,22 +74,21 @@
         </div>
         <div class="col-md-12">
             <label class="form-label">Nome</label>
-            <input type="text" class="form-control" name="nome_carro" id="nome_carro">
+            <input type="text" class="form-control" name="name" id="name">
         </div>
         <div class="col-md-4">
             <label class="form-label">Qtd. de portas</label>
-            <select class="form-select" name="qtd_portas_carro"
-                id="qtd_portas_carro">
-                <option value="1">2</option>
-                <option value="2">3</option>
-                <option value="3">4</option>
-                <option value="3">5</option>
-                <option value="3">6</option>
+            <select class="form-select" name="portQuantity" id="portQuantity">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
             </select>
         </div>
         <div class="col-md-4">
             <label class="form-label">Ano do veiculo</label>
-            <select class="form-select" aria-label="Default select example" name="ano_carro" id="ano_carro">
+            <select class="form-select" name="year" id="year">
                 <option value="2015">2015</option>
                 <option value="2015/2016">2015/2016</option>
                 <option value="2016">2016</option>
@@ -103,74 +108,44 @@
         </div>
         <div class="col-md-4">
             <label class="form-label">Cor</label>
-            <select class="form-select" aria-label="Default select example" name="cor_carro" id="cor_carro">
-                <option value="1">Preto</option>
-                <option value="2">Branco</option>
-                <option value="3">Vermelho</option>
-                <option value="3">Prata</option>
-                <option value="3">Verde</option>
-                <option value="3">Amarelo</option>
-                <option value="3">Laranja</option>
-                <option value="3">Roxo</option>
+            <select class="form-select" name="color" id="color">
+                <option value="Preto">Preto</option>
+                <option value="Branc">Branco</option>
+                <option value="Vermelho">Vermelho</option>
+                <option value="Prat">Prata</option>
+                <option value="Verde">Verde</option>
+                <option value="Amarel">Amarelo</option>
+                <option value="Laranja">Laranja</option>
+                <option value="Roxo">Roxo</option>
             </select>
         </div>
         <div class="col-md-4">
             <label class="form-label">Qtd. de bancos</label>
-            <select class="form-select" aria-label="Default select example" name="qtd_bancos_carro"
-                id="qtd_bancos_carro">
-                <option value="1">4</option>
-                <option value="2">5</option>
-                <option value="3">6</option>
-                <option value="3">7</option>
+            <select class="form-select" name="seatsQuantity" id="seatsQuantity">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
             </select>
         </div>
         <div class="col-md-4">
             <label class="form-label">Câmbio</label>
-            <select class="form-select" aria-label="Default select example" name="cambio_carro" id="cambio_carro">
-                <option value="1">Manual</option>
-                <option value="2">Automático</option>
+            <select class="form-select" name="shift" id="shift">
+                <option value="Manual">Manual</option>
+                <option value="Automático">Automático</option>
             </select>
         </div>
         <div class="col-md-4">
-            <label class="form-label">Unidade</label>
-            <select class="form-select" aria-label="Default select example" name="unidade_carro" id="unidade_carro">
-                <option value="São Paulo">São Paulo</option>
-                <option value="Guarulhos">Guarulhos</option>
-                <option value="Osasco">Osasco</option>
-                <option value="São Caetano do Sul">São Caetano do Sul</option>
-                <option value="Santo André">Santo André</option>
-                <option value="São Bernardo do Campo">São Bernardo do Campo</option>
-                <option value="Cotia">Cotia</option>
-            </select>
+            <label class="form-label">Valor diária R$</label>
+            <input type="text" class="form-control" name="rentValue" id="rentValue">
         </div>
 
         <div class="col-12">
-            <button type="submit" value="Submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" value="Submit" class="btn btn-primary">Cadastrar Veículo</button>
         </div>
     </form>
 
-    <!--<table class="list table table-dark" id="tabela">
-        <thead>
-            <tr>
-                <th scope="col">Modelo</th>
-                <th scope="col">Marca</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Qtd. de portas</th>
-                <th scope="col">Ano do veiculo</th>
-                <th scope="col">Cor</th>
-                <th scope="col">Qtd. de bancos</th>
-                <th scope="col">Câmbio</th>
-                <th scope="col">Unidade</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>-->
-
-    <table id="tabela">
-
+    <!--<table id="tabela">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -186,10 +161,9 @@
                 <th scope="col">Reservado</th>
             </tr>
         </thead>
-    </table>
+    </table>-->
     
-
-    <script src="script_carro.js"></script>
+    <script src="script_carro_post.js"></script>
 </body>
 
 </html>
