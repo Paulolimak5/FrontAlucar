@@ -25,7 +25,7 @@
                     <a class="nav-link" href="#">Cadastro de Reservas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="edit_reserva.html">Busca de Reservas</a>
+                    <a class="nav-link" href="#">Busca de Reservas</a>
                 </li>
             </ul>
         </div>
@@ -35,16 +35,16 @@
         <Strong>Cadastro de Reservas</Strong>
     </div>
 
-    <form class="row g-3" id="cad_reserva">
+    <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" class="row g-3" id="cad_reserva">
         <div class="col-md-12">
-            <label class="form-label">Id Veículo</label>
-            <input type="text" class="form-control" name="carId" id="carId">
+            <label class="form-label">Nome do Cliente</label>
+            <input type="text" class="form-control" name="nome_reserva" id="nome_reserva">
         </div>
         <div class="col-md-6">
             <label class="form-label">Data Incial</label>
             <input type="date" class="form-control" name="data_inicio_reserva" id="data_inicio_reserva">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <label class="form-label">Horário Check In</label>
             <select class="form-select" aria-label="Default select example" name="hora_inicio_reserva" id="hora_inicio_reserva">
                 <option value="00:00">00:00</option>
@@ -101,57 +101,75 @@
             <label class="form-label">Data Final</label>
             <input type="date" class="form-control" name="data_final_reserva" id="data_final_reserva">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <label class="form-label">Horário Check Out</label>
             <select class="form-select" aria-label="Default select example" name="hora_fim_reserva" id="hora_fim_reserva">
-                <option value="00:00:00">00:00</option>
-                <option value="00:30:00">00:30</option>
-                <option value="01:00:00">01:00</option>
-                <option value="01:30:00">01:30</option>
-                <option value="02:00:00">02:00</option>
-                <option value="02:30:00">02:30</option>
-                <option value="03:00:00">03:00</option>
-                <option value="03:30:00">03:30</option>
-                <option value="04:00:00">04:00</option>
-                <option value="04:30:00">04:30</option>
-                <option value="05:00:00">05:00</option>
-                <option value="05:30:00">05:30</option>
-                <option value="06:00:00">06:00</option>
-                <option value="06:30:00">06:30</option>
-                <option value="07:00:00">07:00</option>
-                <option value="07:30:00">07:30</option>
-                <option value="08:00:00">08:00</option>
-                <option value="08:30:00">08:30</option>
-                <option value="09:00:00">09:00</option>
-                <option value="09:30:00">09:30</option>
-                <option value="10:00:00">10:00</option>
-                <option value="10:30:00">10:30</option>
-                <option value="11:00:00">11:00</option>
-                <option value="11:30:00">11:30</option>
-                <option value="12:00:00">12:00</option>
-                <option value="12:30:00">12:30</option>
-                <option value="13:00:00">13:00</option>
-                <option value="13:30:00">13:30</option>
-                <option value="14:00:00">14:00</option>
-                <option value="14:30:00">14:30</option>
-                <option value="15:00:00">15:00</option>
-                <option value="15:30:00">15:30</option>
-                <option value="16:00:00">16:00</option>
-                <option value="16:30:00">16:30</option>
-                <option value="17:00:00">17:00</option>
-                <option value="17:30:00">17:30</option>
-                <option value="18:00:00">18:00</option>
-                <option value="18:30:00">18:30</option>
-                <option value="19:00:00">19:00</option>
-                <option value="19:30:00">19:30</option>
-                <option value="20:00:00">20:00</option>
-                <option value="20:30:00">20:30</option>
-                <option value="21:00:00">21:00</option>
-                <option value="21:30:00">21:30</option>
-                <option value="22:00:00">22:00</option>
-                <option value="22:30:00">22:30</option>
-                <option value="23:00:00">23:00</option>
-                <option value="23:30:00">23:30</option>
+                <option value="00:00">00:00</option>
+                <option value="00:30">00:30</option>
+                <option value="01:00">01:00</option>
+                <option value="01:30">01:30</option>
+                <option value="02:00">02:00</option>
+                <option value="02:30">02:30</option>
+                <option value="03:00">03:00</option>
+                <option value="03:30">03:30</option>
+                <option value="04:00">04:00</option>
+                <option value="04:30">04:30</option>
+                <option value="05:00">05:00</option>
+                <option value="05:30">05:30</option>
+                <option value="06:00">06:00</option>
+                <option value="06:30">06:30</option>
+                <option value="07:00">07:00</option>
+                <option value="07:30">07:30</option>
+                <option value="08:00">08:00</option>
+                <option value="08:30">08:30</option>
+                <option value="09:00">09:00</option>
+                <option value="09:30">09:30</option>
+                <option value="10:00">10:00</option>
+                <option value="10:30">10:30</option>
+                <option value="11:00">11:00</option>
+                <option value="11:30">11:30</option>
+                <option value="12:00">12:00</option>
+                <option value="12:30">12:30</option>
+                <option value="13:00">13:00</option>
+                <option value="13:30">13:30</option>
+                <option value="14:00">14:00</option>
+                <option value="14:30">14:30</option>
+                <option value="15:00">15:00</option>
+                <option value="15:30">15:30</option>
+                <option value="16:00">16:00</option>
+                <option value="16:30">16:30</option>
+                <option value="17:00">17:00</option>
+                <option value="17:30">17:30</option>
+                <option value="18:00">18:00</option>
+                <option value="18:30">18:30</option>
+                <option value="19:00">19:00</option>
+                <option value="19:30">19:30</option>
+                <option value="20:00">20:00</option>
+                <option value="20:30">20:30</option>
+                <option value="21:00">21:00</option>
+                <option value="21:30">21:30</option>
+                <option value="22:00">22:00</option>
+                <option value="22:30">22:30</option>
+                <option value="23:00">23:00</option>
+                <option value="23:30">23:30</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Código Veículo</label>
+            <input type="text" class="form-control" name="cod_carro_reserva" id="cod_carro_reserva">
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Unidade</label>
+            <select class="form-select" aria-label="Default select example" name="unidade_reserva" id="unidade_reserva">
+                <option value="São Paulo">São Paulo</option>
+                <option value="Guarulhos">Guarulhos</option>
+                <option value="Osasco">Osasco</option>
+                <option value="São Caetano do Sul">São Caetano do Sul</option>
+                <option value="Santo André">Santo André</option>
+                <option value="São Bernardo do Campo">São Bernardo do Campo</option>
+                <option value="Cotia">Cotia</option>
             </select>
         </div>
 
@@ -160,7 +178,27 @@
         </div>
     </form>
 
+    <table id="tabela">
+
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Ano</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Qtd. bancos</th>
+                <th scope="col">Qtd. portas</th>
+                <th scope="col">Cor</th>
+                <th scope="col">Câmbio</th>
+                <th scope="col">Preço aluguel</th>
+                <th scope="col">Reservado</th>
+            </tr>
+        </thead>
+    </table>
+    
     <script src="script_reserva.js"></script>
+
 </body>
 
 </html>

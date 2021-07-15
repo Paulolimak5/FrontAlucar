@@ -2,24 +2,20 @@ function main(){
     var myHeaders1 = new Headers();
     myHeaders1.append("Content-Type", "application/json");
     myHeaders1.append("Accept", "application/json");
-    var raw = JSON.stringify({});
     var requestOptions = {
       method: 'GET',
       headers: myHeaders1,
-      body: raw,
       redirect: 'follow'
     };
     
-    fetch("https://alucarrjsexteen.azurewebsites.net/rent-car/list", requestOptions)
+    fetch("https://alucarjeleven.herokuapp.com/rent-car/list", requestOptions)
     .then(function(response){
         return response.json();
       })
       .then(function(data){
-          console.log(data.content[1])
+          //console.log(data.content[1])
           forUser(data.content)
       });
-    
-
 }
 
 function forUser(data){
@@ -49,7 +45,7 @@ function criaLinha(usuario){
     tdAlugado = document.createElement("td");
     
     tdKey.innerHTML = usuario.key
-    tdModelo.innerHTML = usuario.modelo
+    tdModelo.innerHTML = usuario.model
     tdNome.innerHTML = usuario.name
     tdAno.innerHTML = usuario.year
     tdTipo.innerHTML = usuario.type

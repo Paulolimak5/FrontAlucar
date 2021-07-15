@@ -25,12 +25,14 @@ key.addEventListener("blur", (e) => {
 //-----------------------------Delete------------------------------------------
 function deletarCarro() {
     let id = document.querySelector("#key")
+    let idcar = id.value
+
     var requestOptions = {
         method: 'DELETE',
         redirect: 'follow'
     };
 
-    fetch(`https://alucarjeleven.herokuapp.com/car/delete/${id.value}`, requestOptions)
+    fetch(`https://alucarjeleven.herokuapp.com/car/delete/${idcar}`, requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
