@@ -33,6 +33,7 @@ function cadastrarReserva() {
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
 
+    setTimeout(() => {  document.location.reload(true); }, 500);
 
 
 }

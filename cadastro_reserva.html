@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,7 +33,7 @@
         <Strong>Cadastro de Reservas</Strong>
     </div>
 
-    <form class="row g-3" id="cad_reserva">
+    <div class="row g-3" id="cad_reserva">
         <div class="col-md-12">
             <label class="form-label">Id Veículo</label>
             <input type="text" class="form-control" name="carId" id="carId">
@@ -154,13 +152,11 @@
                 <option value="23:30:00.000Z">23:30</option>
             </select>
         </div>
-
         <div class="col-12">
             <button value="Submit" onclick="cadastrarReserva()" class="btn btn-primary">Efetuar Reserva</button>
         </div>
-    </form>
+    </div>
 
     <script src="script_reserva_post.js"></script>
 </body>
-
 </html>
