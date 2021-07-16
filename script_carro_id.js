@@ -36,6 +36,9 @@ function deletarCarro() {
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
+
+        setTimeout(() => {  document.location.reload(true); }, 500);
+
 }
 
 //-----------------------------Update------------------------------------------
@@ -89,4 +92,7 @@ function editarCarro() {
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
+
+        setTimeout(() => {  document.location.reload(true); }, 500);
+
 }
